@@ -1,0 +1,61 @@
+import 'package:flutter/material.dart';
+
+
+class Homepage extends StatelessWidget {
+  const Homepage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      endDrawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Menu principale",style: TextStyle(color: Colors.white)),
+                  IconButton(icon: Icon(Icons.close,color: Colors.red,size: 30,),onPressed: () {
+                    Navigator.of(context).pop();
+                  })
+                ],
+              ),
+                decoration: BoxDecoration(color: Colors.blue),
+            ),
+                ListTile(
+                  leading: Icon(Icons.home),
+                  title: Text("Home"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.list),
+                  title: Text("Mes commandes"),
+                )
+                ,ListTile(
+                  leading: Icon(Icons.add_shopping_cart),
+                  title: Text("Panier"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.home),
+                  title: Text("Home"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.home),
+                  title: Text("Home"),
+                ),
+                SizedBox(height: 280,),
+                ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text("Parametre"),
+                ),
+                ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text("Logout"),
+                )
+          ],
+        ),
+      ),
+
+    );
+  }
+
+}
